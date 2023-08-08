@@ -1,0 +1,9 @@
+Script started on 2023-08-08 15:13:38+02:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="120" LINES="30"]
+[?2004h]0;maan@Maan2023: /mnt/c/Users/maanh/OneDrive/Desktop/hw1[01;32mmaan@Maan2023[00m:[01;34m/mnt/c/Users/maanh/OneDrive/Desktop/hw1[00m$ ping dc2.ad.scilifelab.se./a.out[Kg++ test.cpp [Kls[K./a.outg++ test.cpp[1Pcd Desktop/OneDrive/[3Pmaanh/[1Pusersc[K[2Plscd c:/\users[K/[4Plscd cusersmaanh/OneDrive/[1PDesktop/g++ test.cpp[5P./a.outls[Kg++ test.cpp [6P./a.outping dc2.ad.scilifelab.se[Kping dc2.ad.scilifelab.se[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K ./client 127.0.0.1 2500 output_file.txt >[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C result
+[?2004l^C
+[?2004h]0;maan@Maan2023: /mnt/c/Users/maanh/OneDrive/Desktop/hw1[01;32mmaan@Maan2023[00m:[01;34m/mnt/c/Users/maanh/OneDrive/Desktop/hw1[00m$ ./client 127.0.0.1 2500 output_file.txt > result[1P[C[C[1@0[C[C[1@1[1P[1P[1@1
+[?2004l[?2004h]0;maan@Maan2023: /mnt/c/Users/maanh/OneDrive/Desktop/hw1[01;32mmaan@Maan2023[00m:[01;34m/mnt/c/Users/maanh/OneDrive/Desktop/hw1[00m$ cmp output_file.txt result 
+[?2004l[?2004h]0;maan@Maan2023: /mnt/c/Users/maanh/OneDrive/Desktop/hw1[01;32mmaan@Maan2023[00m:[01;34m/mnt/c/Users/maanh/OneDrive/Desktop/hw1[00m$ [?2004l
+exit
+
+Script done on 2023-08-08 15:15:21+02:00 [COMMAND_EXIT_CODE="0"]

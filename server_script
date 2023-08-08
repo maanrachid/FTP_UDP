@@ -1,0 +1,8 @@
+Script started on 2023-08-08 15:13:09+02:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="35"]
+[?2004h]0;maan@Maan2023: /mnt/c/Users/maanh/OneDrive/Desktop/hw1[01;32mmaan@Maan2023[00m:[01;34m/mnt/c/Users/maanh/OneDrive/Desktop/hw1[00m$ ping dc2.ad.scilifelab.se./a.out[Kg++ test.cpp [K[K[K[K[K[K[K[K[K[K[K[K[K./server 2001
+[?2004lSocket has port #2001
+^C
+[?2004h]0;maan@Maan2023: /mnt/c/Users/maanh/OneDrive/Desktop/hw1[01;32mmaan@Maan2023[00m:[01;34m/mnt/c/Users/maanh/OneDrive/Desktop/hw1[00m$ [?2004l
+exit
+
+Script done on 2023-08-08 15:15:26+02:00 [COMMAND_EXIT_CODE="130"]

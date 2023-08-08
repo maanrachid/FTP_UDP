@@ -1,0 +1,57 @@
+Maan Haj Rachid
+
+Project Overview (networking homework 2002, Suffolk University):
+This project involves the implementation of a client-server architecture utilizing the UDP protocol to mimic an FTP (File Transfer Protocol) scenario. The server is designed to handle multiple requests concurrently. A sliding window approach is employed on the client side to enhance data transfer efficiency.
+
+Structures Used:
+Two main structures, "packet" and "request," are employed in both the server and client components.
+
+Packet Structure:
+1. Packet Number
+2. Occupy (Client only)
+3. Done (Server-determined)
+4. Message (Data content)
+
+Request Structure:
+1. Name of the Requested File
+2. Client Address
+3. Client Port
+4. Packet Number
+
+Client Functionality:
+Upon execution, the client checks for the correct number of arguments (4). It then creates a datagram socket using the socket function. The client's machine name is obtained using gethostname. The client information is stored in a sockaddr_in structure named "clientname," followed by binding to this name. Server information is retrieved using a separate sockaddr_in structure named "servername."
+
+The "r1" request structure, which remains constant, contains the following information:
+- Name of the requested file (fourth argument from the command line)
+- Client address and port (automatically assigned by the system)
+- Required packet number
+
+The sliding window mechanism employs an array named "window," representing the packets in the window. The client sends requests for packets within the sliding window, starting from the required packet. The "index1" variable indicates the location of the required packet within the window.
+
+The "occupy" field assists in determining whether a slot in the array contains the correct packet. If a slot contains the appropriate packet, there is no need to send a request for that packet. The client performs this check using the "window[...]" condition.
+
+If a sending operation fails, the client waits for a second before attempting to send again. In the case of a successful send, the client waits for a defined amount of microseconds ("WAIT," set to 200) using the "select" function for timing control.
+
+The "checkanddecide" function serves two primary purposes:
+1. If the received packet corresponds to the required packet (based on the "num" field), the function performs the following steps:
+   - Outputs the message to standard output
+   - Places the new imaginary packet in its designated slot (waiting for the real one; if packet 1 is missing, packet 1 + WINSIZE becomes the new packet)
+   - Marks the packet as imaginary (occupy = 0)
+   - Adjusts "index1" and "requiredpacket"
+   - The subsequent while loop prints all packets that are ready (occupy = 1).
+
+2. If the received packet falls within an acceptable range, the function shifts the packet to the correct position within the window and designates it as occupied with the correct packet (occupy = 1).
+
+Server Functionality:
+The server initiates by performing initial checks, creating a datagram socket using the socket function, and binding it using a sockaddr_in structure filled with the appropriate information. The server then announces its port and begins serving.
+
+Upon receiving requests, the server reads the buffer, identifies the requested file, opens the file, seeks the appropriate position based on the packet number, reads the data into "buf2," acquires the client's hostname and port, and sends the packet containing the data. If the file is successfully opened, it is closed after processing.
+
+Protocol and Performance:
+The protocol primarily utilizes a sliding window approach on the client side. If the client does not receive data promptly, it sends a request for the next packet within the sliding window.
+
+It's worth noting that the program can also function as a stop-and-wait protocol by setting "WINSIZE" to 1. However, there are significant performance differences between the two protocols.
+
+It's important to note that a larger sliding window could have been used, but due to concerns about potential segmentation faults, the buffer was limited to 5000 bytes.
+
+A simple demonstration is in client_script and server_script
